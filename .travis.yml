@@ -1,0 +1,12 @@
+language: ruby
+cache: bundler
+rvm:
+- 2.3.0
+script: "./_bin/deploy"
+branches:
+  only:
+    - master
+env:
+  global:
+    - GITHUB_REPO_SLUG=theyworkforyou/tusrepresentanteslocales
+    - secure: sQFzmETnACyD/Meu6D3mTj2WSh47CFl/m8roHcraq19Dtz+g7+/xhg7kVbWo22bPfAoIl4QCZAlXFxFBpFMCpem+wQO9+YltJqxsN8on1/0T3pjqfeEacvXh1BBxu2AIlnL6mivqHhjOmhvadge8Uv+HiNyX9VUbUOiqsx0696chBNenc65r8E7a3K0iXjF/3duaAUvK6Y355MKw7ueQMbKm/Bhf2GMtrg1hunzyXDnI6ebYW112ZFq2HpT8PgGaq7B32D/vLJhbE3PtB2UA3J7EMiIV7zKmADvNxP+G0JXfm57UzGLtulwajfGVW0Gv1sgQDGhD3msoLUlracCtIl73kJrN/C5dERBeUy+pJ32h7Z9pSM+4NRLcUaemeBlotQser8JdSjmB4L0dWkiv8qem2ZRzfKQb9KCODIFZNb+8d46c3j0Yf/310aJbBl9lmuj5+3neXEZ9TlwF2e3+rChBb4b9tCCtVWTxdShli8/oSFSgmUg6L+B8+oHTuz1OIcRkUUVBVRGulbr4jPTgmYHjbVdCpR67yk1Nm+Vpp5HVOHK07dfsc15N1JqCKcb8+f1LBNuQ6NEJK3VWUQ+Rng5Gui5ZSt2MRyq6vcVcny6yN7zVZK7oBJ+fqrzVjRGRFe0+SmZPEy3XDp0vo9y6ZYkjyivN5snqRp3cucdoM18=
