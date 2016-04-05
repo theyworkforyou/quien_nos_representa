@@ -5,3 +5,5 @@ layout: default
 <h1>{{ page.name }}</h1>
 
 <p>Alcades de <a href="{{ page.canton.url | prepend: site.baseurl }}">{{ page.canton.name }}</a>.</p>
+
+{% include data_dump.html %}

@@ -1,0 +1,7 @@
+<dl>
+{% for column in site.data.csv_columns %}
+  {% unless page[column] %}{% continue %}{% endunless %}
+  <dt>{{ column }}</dt>
+  <dd>{{ page[column] }}</dd>
+{% endfor %}
+</dl>

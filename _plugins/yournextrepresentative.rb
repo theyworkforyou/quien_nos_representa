@@ -17,6 +17,35 @@ class YNR < Jekyll::Generator
   ]
 
   def generate(site)
+    site.data['csv_columns'] = [
+      :id,
+      :name,
+      :honorific_prefix,
+      :honorific_suffix,
+      :gender,
+      :birth_date,
+      :election,
+      :party_id,
+      :party_name,
+      :post_id,
+      :post_label,
+      :mapit_url,
+      :elected,
+      :email,
+      :twitter_username,
+      :facebook_page_url,
+      :party_ppc_page_url,
+      :facebook_personal_url,
+      :homepage_url,
+      :wikipedia_url,
+      :linkedin_url,
+      :image_url,
+      :proxy_image_url_template,
+      :image_copyright,
+      :image_uploading_user,
+      :image_uploading_user_notes
+    ].map(&:to_s)
+
     SOURCES.each do |csv|
       csv['filters'] ||= {}
       Jekyll::Csv::CollectionPopulator.new(csv).populate(site)
