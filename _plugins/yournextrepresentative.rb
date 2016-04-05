@@ -34,7 +34,6 @@ class YNR < Jekyll::Generator
       canton = Jekyll::Document.new(path, collection: cantons, site: site)
       alcades = alcades_cantons[canton_name].to_a
       regidores = regidores_cantons[canton_name].to_a
-      warn canton_name if alcades.any? && regidores.any?
       canton.merge_data!(
         'name' => canton_name,
         'alcades' => alcades,
