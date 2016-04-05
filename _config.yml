@@ -25,3 +25,5 @@ collections:
     output: true
   regidores:
     output: true
+  alcades:
+    output: true
