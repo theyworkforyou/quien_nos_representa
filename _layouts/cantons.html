@@ -8,6 +8,8 @@ layout: default
 <ul>
   {% for regidores in page.regidores %}
   <li><a href="{{ regidores.url | prepend: site.baseurl }}">{{ regidores.name }}</a></li>
+  {% else %}
+  <li>No regidores for {{ page.name }}</li>
   {% endfor %}
 </ul>
 
@@ -15,5 +17,7 @@ layout: default
 <ul>
   {% for alcades in page.alcades %}
   <li><a href="{{ alcades.url | prepend: site.baseurl }}">{{ alcades.name }}</a></li>
+  {% else %}
+  <li>No alcades for {{ page.name }}</li>
   {% endfor %}
 </ul>
