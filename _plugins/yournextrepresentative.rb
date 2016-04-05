@@ -1,10 +1,23 @@
 class YNR < Jekyll::Generator
-  def generate(site)
-    Jekyll::Csv::CollectionPopulator.new(
+  SOURCES = [
+    {
       'source' => 'http://tusrepresentanteslocales.co.cr/media/candidates-mun-re-2016.csv',
-      'collection_name' => 'regidores'
-    ).populate(site)
-    site.collections['regidores'].docs = site.collections['regidores'].docs.find_all { |d| d.data['elected'] == 'True' }
+      'collection_name' => 'regidores',
+      'filters' => {
+        'elected' => 'True'
+      }
+    }
+  ]
+
+  def generate(site)
+    SOURCES.each do |csv|
+      csv['filters'] ||= {}
+      Jekyll::Csv::CollectionPopulator.new(csv).populate(site)
+      site.collections[collection].docs = site.collections[collection].docs.find_all do |doc|
+        csv['filters'].all? { |k, v| doc.data[k] == v }
+      end
+    end
+
     cantons = Jekyll::Collection.new(site, 'cantons')
     site.collections['regidores'].docs.group_by { |r| r['post_label'] }.each do |canton_name, regidores|
       path = File.join(site.source, "_cantons", "#{Jekyll::Utils.slugify(canton_name)}.md")
