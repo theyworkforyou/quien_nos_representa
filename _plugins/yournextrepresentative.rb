@@ -23,7 +23,7 @@ class YNR < Jekyll::Generator
       path = File.join(site.source, "_cantons", "#{Jekyll::Utils.slugify(canton_name)}.md")
       canton = Jekyll::Document.new(path, collection: cantons, site: site)
       canton.merge_data!(
-        'name' => canton_name,
+        'name' => canton_name.sub(/^Regidor de /, ''),
         'regidores' => regidores
       )
       if site.layouts.key?('cantons')
