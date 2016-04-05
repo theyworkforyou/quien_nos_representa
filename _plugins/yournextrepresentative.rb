@@ -19,11 +19,12 @@ class YNR < Jekyll::Generator
     end
 
     cantons = Jekyll::Collection.new(site, 'cantons')
-    site.collections['regidores'].docs.group_by { |r| r['post_label'] }.each do |canton_name, regidores|
+    site.collections['regidores'].docs.group_by { |r| r['post_label'] }.each do |post_label, regidores|
+      canton_name = post_label.sub(/^Regidor de /, '')
       path = File.join(site.source, "_cantons", "#{Jekyll::Utils.slugify(canton_name)}.md")
       canton = Jekyll::Document.new(path, collection: cantons, site: site)
       canton.merge_data!(
-        'name' => canton_name.sub(/^Regidor de /, ''),
+        'name' => canton_name,
         'regidores' => regidores
       )
       if site.layouts.key?('cantons')
