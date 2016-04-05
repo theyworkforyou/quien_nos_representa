@@ -7,13 +7,13 @@ layout: default
 <h3>Regidores</h3>
 <ul>
   {% for regidores in page.regidores %}
-  <li><a href="{{ regidores.url }}">{{ regidores.name }}</a></li>
+  <li><a href="{{ regidores.url | prepend: site.baseurl }}">{{ regidores.name }}</a></li>
   {% endfor %}
 </ul>
 
 <h3>Alcades</h3>
 <ul>
   {% for alcades in page.alcades %}
-  <li><a href="{{ alcades.url }}">{{ alcades.name }}</a></li>
+  <li><a href="{{ alcades.url | prepend: site.baseurl }}">{{ alcades.name }}</a></li>
   {% endfor %}
 </ul>

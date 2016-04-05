@@ -9,7 +9,7 @@ layout: default
   <select onchange="javascript: window.location = this.value">
     <option>Select your canton</option>
     {% for canton in site.cantons %}
-    <option value="{{ canton.url }}">{{ canton.name }}</option>
+    <option value="{{ canton.url | prepend: site.baseurl }}">{{ canton.name }}</option>
     {% endfor %}
   </select>
 
