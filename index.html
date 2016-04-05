@@ -6,4 +6,11 @@ layout: default
 
   <h1 class="page-heading">{{ site.title }}</h1>
 
+  <select onchange="javascript: window.location = this.value">
+    <option>Select your canton</option>
+    {% for canton in site.cantons %}
+    <option value="{{ canton.url }}">{{ canton.name }}</option>
+    {% endfor %}
+  </select>
+
 </div>
