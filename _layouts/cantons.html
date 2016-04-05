@@ -1,0 +1,11 @@
+---
+layout: default
+---
+
+<h2>{{ page.name }}</h2>
+
+<ul>
+  {% for regidores in page.regidores %}
+  <li><a href="{{ regidores.url }}">{{ regidores.name }}</a></li>
+  {% endfor %}
+</ul>

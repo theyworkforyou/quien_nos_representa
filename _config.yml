@@ -19,3 +19,9 @@ exclude: [Gemfile, Gemfile.lock, README.md, vendor]
 
 # Build settings
 markdown: kramdown
+
+collections:
+  cantons:
+    output: true
+  regidores:
+    output: true
