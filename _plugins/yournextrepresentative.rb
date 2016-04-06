@@ -1,14 +1,14 @@
 class YNR < Jekyll::Generator
   SOURCES = [
     {
-      'source' => 'http://tusrepresentanteslocales.co.cr/media/candidates-mun-re-2016.csv',
+      'source' => 'candidates-mun-re-2016.csv',
       'collection_name' => 'regidores',
       'filters' => {
         'elected' => 'True'
       }
     },
     {
-      'source' => 'http://tusrepresentanteslocales.co.cr/media/candidates-mun-al-2016.csv',
+      'source' => 'candidates-mun-al-2016.csv',
       'collection_name' => 'alcades',
       'filters' => {
         'elected' => 'True'
