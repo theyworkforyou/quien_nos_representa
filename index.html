@@ -7,7 +7,7 @@ layout: default
   <h1 class="page-heading">{{ site.title }}</h1>
 
   <select class="js-canton-selector canton-selector">
-    <option>Select your canton</option>
+    <option>Ingresá tu cantón</option>
     {% for canton in site.cantons %}
     <option value="{{ canton.url | prepend: site.baseurl }}">{{ canton.name }}</option>
     {% endfor %}
